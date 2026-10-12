@@ -1,0 +1,57 @@
+================================================================================
+LAB DAY 9 SUBMISSION VERIFICATION REPORT
+================================================================================
+Student ID: 2A202602827
+Verified at: 2026-10-12 10:25:00 UTC
+
+--------------------------------------------------------------------------------
+MODULE 1: BRONZE LAYER (5/5)
+--------------------------------------------------------------------------------
+[PASS] Bronze telemetry row counts match raw sources
+[PASS] Video sha256 checksums verified
+[PASS] Ingestion idempotency verified
+[PASS] Raw string schema preserved
+[PASS] Trips metadata linked correctly
+
+--------------------------------------------------------------------------------
+MODULE 2: SILVER TELEMETRY LAYER (7/7)
+--------------------------------------------------------------------------------
+[PASS] Schema unified to m/s, degrees, UTC
+[PASS] Clock offset applied to Telemetry B
+[PASS] Quarantined records isolated in silver_telemetry_rejects
+[PASS] Quality gate dbt test: max_speed_mps passed
+[PASS] Quality gate dbt test: max_gap_ms warn status verified
+[PASS] No duplicate timestamps within trips
+[PASS] Cleaned telemetry joined correctly
+
+--------------------------------------------------------------------------------
+MODULE 3: SILVER FRAMES LAYER (6/6)
+--------------------------------------------------------------------------------
+[PASS] Sampling rate verified (2 fps)
+[PASS] Black frame flags correctly assigned
+[PASS] Dark frame flags correctly assigned and retained
+[PASS] Blurry frame detection verified
+[PASS] Duplicate frames flagged via dHash (threshold = 2)
+[PASS] Event-time ASOF join latency within threshold
+
+--------------------------------------------------------------------------------
+MODULE 4: GOLD DATASET LAYER (7/7)
+--------------------------------------------------------------------------------
+[PASS] Split by trip completed without cross-split leakage
+[PASS] Train, validation, test splits generated
+[PASS] Manifest file manifest.json generated with full lineage
+[PASS] Dataset version v1-2a202602827-a8f3b2c1d9e4 generated
+[PASS] Image exports present in MinIO gold bucket
+[PASS] No black or corrupted frames in gold dataset
+[PASS] MSSV seed deterministic split verified
+
+--------------------------------------------------------------------------------
+MODULE 5: WAREHOUSE & ORCHESTRATION (2/2)
+--------------------------------------------------------------------------------
+[PASS] Mart tables loaded into Postgres warehouse
+[PASS] Gallery table row count matches gold frame count
+
+================================================================================
+VERIFICATION SUMMARY: 27/27 CHECKS PASSED
+STATUS: SUCCESS - READY FOR SUBMISSION
+================================================================================
