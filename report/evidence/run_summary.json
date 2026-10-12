@@ -1,0 +1,17 @@
+{
+  "student_id": "2A202602827",
+  "dataset_version": "v1-2a202602827-a8f3b2c1d9e4",
+  "verify_all_passed": true,
+  "steps": {
+    "bronze": "PASS",
+    "silver_telemetry": "PASS",
+    "silver_frames": "PASS",
+    "gold": "PASS",
+    "warehouse": "PASS"
+  },
+  "verification": {
+    "passed": 27,
+    "total": 27
+  },
+  "ran_at": "2026-10-12T10:24:00+00:00"
+}

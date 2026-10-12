@@ -1,0 +1,36 @@
+{
+  "experiment": "threshold",
+  "student_id": "2A202602827",
+  "ran_at": "2026-10-12T09:17:00.000000+00:00",
+  "thresholds": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    8
+  ],
+  "per_drive": [
+    {
+      "drive": "drive_a",
+      "total": 1500,
+      "within_0_bits": 32,
+      "within_1_bits": 58,
+      "within_2_bits": 112,
+      "within_4_bits": 240,
+      "within_6_bits": 410,
+      "within_8_bits": 620
+    },
+    {
+      "drive": "drive_b",
+      "total": 1500,
+      "within_0_bits": 18,
+      "within_1_bits": 42,
+      "within_2_bits": 86,
+      "within_4_bits": 195,
+      "within_6_bits": 380,
+      "within_8_bits": 590
+    }
+  ],
+  "threshold_in_use": 2
+}
